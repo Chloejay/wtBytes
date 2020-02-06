@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>test page</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'news/style.css' %}">
+  </head>
+  <body>
+    {% if title %}
+    <ul>
+    Data Science Feed 
+    <!-- TODO -->
+    {% for t in title %}
+    <li><a href="{% url 'setup_test:detail' t.id %}">{{ t.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% endif %}
+  </body>
+</html>
+
+
