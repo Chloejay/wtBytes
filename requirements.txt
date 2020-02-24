@@ -1,6 +1,6 @@
 celery==4.4.0
 Django==3.0.3
-gunicorn==19.4.0
+gunicorn==19.5.0
 marshmallow==3.5.0
 mypy==0.761
 mypy-extensions==0.4.3
