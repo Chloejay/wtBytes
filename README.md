@@ -4,7 +4,7 @@
 
 <img src='/img/celery_task.png'/> 
 
-send the message to celery 
+send message by celery worker
 <!-- <img scr='celery_task3.png'/> -->
 <img src='/img/celery_task3.png'/>
 <img src='/img/celery_task2.png'/> 
@@ -14,16 +14,13 @@ start Celery workers and make sure they are restarted in case of a system reboot
 ```
 $ pip install supervisor
 
-$ vim /etc/supervisor/conf.d
-$ touch newsfeed.conf 
-
+$ vim /etc/supervisord/
+$ touch supervisord.conf 
 sudo supervisord -c /etc/supervisord/supervisord.conf
 sudo supervisorctl -c /etc/supervisord/supervisord.conf
-
 ```
 
 ```
-cat /etc/supervisord/celery.ini
 [program:celery]
 command=../Users/chloeji/wtBytes/newsfeed/newsfeed/celery -A newsfeed.celery.worker --loglevel=INFO
 directory=../Users/chloeji/wtBytes/newsfeed/newsfeed
