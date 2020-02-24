@@ -2,6 +2,7 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+from news.tasks import test 
 
 
 def main():
@@ -18,4 +19,5 @@ def main():
 
 
 if __name__ == '__main__':
+    test.delay('this is just a test') 
     main()
